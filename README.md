@@ -458,5 +458,4 @@ const x: string[] = ['a', 'b'];
 
 # TODO:
 
-- Extend ESLint rules documentation, Airbnb like.
-- Gradually turng warnings into errors once all projects are using `@propylon/eslint-config`.
+- Update files to use TS extension

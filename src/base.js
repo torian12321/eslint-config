@@ -2,7 +2,7 @@ import pluginJs from '@eslint/js';
 import { resolve } from 'node:path';
 import tseslint from 'typescript-eslint';
 
-import { propylonCustomPluginRules } from './rules/customRules/index.js';
+import { torian12321CustomPluginRules } from './rules/customRules/index.js';
 import { importRules } from './rules/import.js';
 import { namingConventionRules } from './rules/namingConvention.js';
 import { objectRules } from './rules/objects.js';
@@ -41,7 +41,7 @@ export default [
         project,
       },
     },
-    plugins: { 'propylon-eslint': propylonCustomPluginRules },
+    plugins: { 'torian12321-eslint': torian12321CustomPluginRules },
     rules: {
       'default-case': 'error',
       'default-param-last': 'warn',
@@ -55,8 +55,8 @@ export default [
       'no-unneeded-ternary': 'error',
       'no-else-return': 'error',
       'max-params': ['error', { max: 3 }],
-      'propylon-eslint/max-params': ['error', { max: 5 }],
-      'propylon-eslint/naming-convention-gql': 'error',
+      'torian12321-eslint/max-params': ['error', { max: 5 }],
+      'torian12321-eslint/naming-convention-gql': 'error',
       '@typescript-eslint/member-ordering': ['error'],
       '@typescript-eslint/prefer-for-of': ['error'],
       '@typescript-eslint/prefer-find': 'error',

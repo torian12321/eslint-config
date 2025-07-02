@@ -1,6 +1,6 @@
 export const namingConventionRules = {
   rules: {
-    'propylon-eslint/naming-convention-gql': 'error',
+    'torian12321-eslint/naming-convention-gql': 'error',
     '@typescript-eslint/naming-convention': [
       'error',
       {

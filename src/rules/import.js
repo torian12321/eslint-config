@@ -11,20 +11,6 @@ export const importRules = {
     'import/first': 'error',
     'import/newline-after-import': 'error',
     'import/no-duplicates': ['error', { considerQueryString: true }],
-    // 'no-restricted-imports': [
-    //   'error',
-    //   {
-    //     // Sometimes IDE autoclomplete is accidently accessing elements direcly from
-    //     // `packages`folder, when it should be `@propylon/ui` | `@propylon/js-utils` | etc
-    //     // This rule restricts access to `packages` folder.
-    //     patterns: [
-    //       {
-    //         group: ['../**/packages/*'],
-    //         message: 'Accessing package modules by path is not allowed.',
-    //       },
-    //     ],
-    //   },
-    // ],
     'simple-import-sort/exports': 'error',
     'simple-import-sort/imports': [
       'error',
