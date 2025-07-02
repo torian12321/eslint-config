@@ -1,0 +1,14 @@
+documentation:
+- changed-files:
+  - any-glob-to-any-file: [
+    '**/*.md',
+    '**/*.mdx'
+  ]
+
+ESLint rules 🔷:
+- changed-files:
+  - any-glob-to-any-file: ['./src/**/*']
+
+github actions:
+- changed-files:
+  - any-glob-to-any-file: ['.github/**/*']
