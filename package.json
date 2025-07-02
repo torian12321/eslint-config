@@ -1,6 +1,6 @@
 {
   "name": "@torian12321/eslint-config",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "main": "src/index.js",
   "type": "module",
   "author": "torian12321",
@@ -11,8 +11,7 @@
     "test:watch": "vitest watch",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "prepublishOnly": "npm run test",
-    "publish": "npm publish"
+    "prepublishOnly": "npm run test"
   },
   "publishConfig": {
     "access": "public",
