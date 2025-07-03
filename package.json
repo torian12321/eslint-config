@@ -6,7 +6,7 @@
   "author": "torian12321",
   "prettier": "@torian12321/prettier-config",
   "scripts": {
-    "postinstall": "npmrc-replace-env",
+    "preinstall": "node scripts/generate-npmrc.js",
     "test": "vitest run",
     "test:watch": "vitest watch",
     "lint": "eslint .",
@@ -27,7 +27,6 @@
     "@typescript-eslint/parser": "^8.35.1",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.5.1",
-    "npmrc-replace-env": "^1.1.4",
     "typescript-eslint": "^8.35.1"
   },
   "devDependencies": {

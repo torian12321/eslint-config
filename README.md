@@ -25,6 +25,22 @@ Add ESLint config to your app/package as a dependency by running the command:
 npm install @torian12321/eslint-config --save-dev
 ```
 
+### Setup Requirements
+
+This package uses GitHub packages for some dependencies. To install successfully, you need to:
+
+1. Create a `.env` file in the project root with your GitHub Personal Access Token:
+
+   ```
+   NPMRC_NODE_AUTH_TOKEN=your_github_token_here
+   ```
+
+2. Generate a GitHub Personal Access Token at: https://github.com/settings/tokens
+   - Make sure it has the necessary permissions for package access
+   - The token will be automatically used to generate the `.npmrc` file during installation
+
+The `.npmrc` file is automatically generated from `.npmrc.config` during the `preinstall` script, replacing `NPMRC_NODE_AUTH_TOKEN` with your actual token.
+
 ## Usage
 
 At your app/package root level, add a `eslint.config.js` file and add
