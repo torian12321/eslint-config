@@ -2,13 +2,13 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const filename = fileURLToPath(import.meta.url);
+const dirname = path.dirname(filename);
 
-function generateNpmrc() {
+const generateNpmrc = () => {
   try {
     // Read .env file
-    const envPath = path.join(__dirname, '..', '.env');
+    const envPath = path.join(dirname, '..', '.env');
     let authToken = '';
 
     if (fs.existsSync(envPath)) {
@@ -19,7 +19,7 @@ function generateNpmrc() {
       }
     } else {
       // Try to get from environment variable
-      authToken = process.env.NPMRC_NODE_AUTH_TOKEN || '';
+      authToken = process.env.NPMRC_NODE_AUTH_TOKEN ?? '';
     }
 
     if (!authToken) {
@@ -29,7 +29,7 @@ function generateNpmrc() {
     }
 
     // Read .npmrc.config
-    const configPath = path.join(__dirname, '..', '.npmrc.config');
+    const configPath = path.join(dirname, '..', '.npmrc.config');
     if (!fs.existsSync(configPath)) {
       console.error('Error: .npmrc.config file not found');
       process.exit(1);
@@ -44,7 +44,7 @@ function generateNpmrc() {
     );
 
     // Write .npmrc
-    const npmrcPath = path.join(__dirname, '..', '.npmrc');
+    const npmrcPath = path.join(dirname, '..', '.npmrc');
     fs.writeFileSync(npmrcPath, npmrcContent);
 
     console.log('✅ .npmrc generated successfully');
@@ -52,6 +52,6 @@ function generateNpmrc() {
     console.error('Error generating .npmrc:', error.message);
     process.exit(1);
   }
-}
+};
 
 generateNpmrc();
