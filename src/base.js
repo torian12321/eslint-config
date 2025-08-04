@@ -2,7 +2,7 @@ import pluginJs from '@eslint/js';
 import { resolve } from 'node:path';
 import tseslint from 'typescript-eslint';
 
-import { torian12321CustomPluginRules } from './rules/customRules/index.js';
+import { customPluginRules } from './rules/customRules/index.js';
 import { importRules } from './rules/import.js';
 import { namingConventionRules } from './rules/namingConvention.js';
 import { objectRules } from './rules/objects.js';
@@ -41,7 +41,7 @@ export default [
         project,
       },
     },
-    plugins: { 'torian12321-eslint': torian12321CustomPluginRules },
+    plugins: { 'torian12321-eslint': customPluginRules },
     rules: {
       'default-case': 'error',
       'default-param-last': 'warn',

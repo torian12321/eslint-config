@@ -12,14 +12,14 @@ There are 2 available ESLint configuration files:
 - `react.js`: For a React project (extends base config).
 
 <p align="center">
-  <img src="./docs/eslint-config.svg" alt='eslint-config diagram' />
+  <img src="./docs/assets/eslint-config.svg" alt='eslint-config diagram' />
 </p>
 
 ## Usage
 
 To use ESlint rules in your project, follow [usage Examples](./docs/USAGE.md)
 
-### Setup Requirements
+## Setup Requirements
 
 This package uses GitHub packages for some dependencies. To install successfully, you need to:
 
