@@ -44,7 +44,7 @@
   "devDependencies": {
     "@torian12321/prettier-config": "^0.0.0",
     "@torian12321/typescript-config": "^0.0.1",
-    "eslint": "^9.30.1",
+    "eslint": "^9.32.0",
     "prettier": "^3.6.2",
     "vitest": "^3.2.4"
   }
