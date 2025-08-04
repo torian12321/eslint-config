@@ -9,23 +9,17 @@ The configuration will consider that [ESLint v9.0.0](https://eslint.org/blog/202
 There are 2 available ESLint configuration files:
 
 - `base.js`: For a basic typescript project.
-- `react.js`: For a react project.
-
-`react.js` inherits configurations from `base.js`.
+- `react.js`: For a React project (extends base config).
 
 <p align="center">
-  <img src="./docs/eslint-config.svg" alt='eslint-config diagram' />
+  <img src="./docs/assets/eslint-config.svg" alt='eslint-config diagram' />
 </p>
 
-## Installation
+## Usage
 
-Add ESLint config to your app/package as a dependency by running the command:
+To use ESlint rules in your project, follow [usage Examples](./docs/USAGE.md)
 
-```sh
-npm install @torian12321/eslint-config --save-dev
-```
-
-### Setup Requirements
+## Setup Requirements
 
 This package uses GitHub packages for some dependencies. To install successfully, you need to:
 
@@ -40,36 +34,6 @@ This package uses GitHub packages for some dependencies. To install successfully
    - The token will be automatically used to generate the `.npmrc` file during installation
 
 The `.npmrc` file is automatically generated from `.npmrc.config` during the `preinstall` script, replacing `NPMRC_NODE_AUTH_TOKEN` with your actual token.
-
-## Usage
-
-At your app/package root level, add a `eslint.config.js` file and add
-
-```js
-import { baseConfig } from '@torian12321/eslint-config';
-
-export default [
-  ...baseConfig,
-  {
-    // ...customRules,
-    // ...customConfig,
-  },
-];
-```
-
-If you have a React app/package, add instead:
-
-```js
-import { reactConfig } from '@torian12321/eslint-config';
-
-export default [
-  ...reactConfig,
-  {
-    // ...customRules,
-    // ...customConfig,
-  },
-];
-```
 
 ## Rules
 

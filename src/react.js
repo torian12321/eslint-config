@@ -4,6 +4,7 @@ import globals from 'globals';
 
 import { reactHookRules } from './rules/hooks.js';
 import { prettierRules } from './rules/prettier.js';
+import { customPluginRules } from './rules/customRules/index.js';
 import baseConfig from './base.js';
 
 export default [
@@ -16,6 +17,7 @@ export default [
     plugins: {
       react,
       'react-refresh': reactRefresh,
+      'torian12321-eslint': customPluginRules,
     },
     settings: {
       react: {
