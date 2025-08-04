@@ -1,0 +1,16 @@
+{
+  "name": "example-project",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "format:check": "eslint",
+    "format": "eslint --fix"
+  },
+  "devDependencies": {
+    "@torian12321/eslint-config": "file:../",
+    "eslint": "^9.30.1"
+  },
+  "dependencies": {
+    "react": "^19.1.1"
+  }
+}
