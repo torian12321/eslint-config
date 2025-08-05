@@ -1,6 +1,6 @@
 {
   "name": "@torian12321/eslint-config",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "main": "src/index.js",
   "type": "module",
   "exports": {
@@ -11,7 +11,6 @@
   "author": "torian12321",
   "prettier": "@torian12321/prettier-config",
   "scripts": {
-    "preinstall": "node scripts/generate-npmrc.js",
     "test": "vitest run",
     "test:watch": "vitest watch",
     "format": "eslint --fix",
@@ -31,9 +30,11 @@
     "@eslint/js": "^9.30.1",
     "@typescript-eslint/eslint-plugin": "^8.35.1",
     "@typescript-eslint/parser": "^8.35.1",
-    "eslint-config-prettier": "^10.1.5",
-    "eslint-plugin-prettier": "^5.5.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.3",
     "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-no-inline-styles": "^1.0.5",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
@@ -43,7 +44,7 @@
     "globals": "^13.24.0"
   },
   "devDependencies": {
-    "@torian12321/prettier-config": "^0.0.0",
+    "@torian12321/prettier-config": "^0.0.2",
     "@torian12321/typescript-config": "^0.0.1",
     "eslint": "^9.30.1",
     "prettier": "^3.6.2",
