@@ -1,0 +1,4 @@
+{
+  "extends": "@torian12321/typescript-config/vite.json",
+  "include": [".", "src"]
+}
