@@ -1,0 +1,20 @@
+{
+  "name": "example-react-vite",
+  "version": "1.0.0",
+  "type": "module",
+  "prettier": "@torian12321/prettier-config",
+  "scripts": {
+    "format:check": "eslint",
+    "format": "eslint --fix"
+  },
+  "devDependencies": {
+    "@torian12321/eslint-config": "file:../../",
+    "@torian12321/prettier-config": "0.0.2",
+    "@torian12321/typescript-config": "0.0.1",
+    "prettier": "^3.6.2",
+    "eslint": "^9.30.1"
+  },
+  "dependencies": {
+    "react": "^19.1.1"
+  }
+}

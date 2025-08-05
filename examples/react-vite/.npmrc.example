@@ -1,0 +1,6 @@
+# Custom registry for @torian12321 packages
+@torian12321:registry=https://npm.pkg.github.com
+
+# https://github.com/settings/tokens
+# Create a GitHub personal access token (classic) with read:packages.
+//npm.pkg.github.com/:_authToken=NPMRC_NODE_AUTH_TOKEN

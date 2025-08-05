@@ -1,8 +1,8 @@
-import { baseConfig } from '@torian12321/eslint-config';
+import { reactConfig } from '@torian12321/eslint-config';
 
 export default [
   { ignores: ['eslint.config.js'] },
-  ...baseConfig,
+  ...reactConfig,
   {
     files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
@@ -12,8 +12,8 @@ export default [
     },
     // Add any project-specific overrides here
     rules: {
-      // Example: disable a rule for this project
-      'no-console': 'off',
+      // Example: change rule for this project to only warn instead of error
+      '@typescript-eslint/no-unused-vars': 'warn',
     },
   },
 ];

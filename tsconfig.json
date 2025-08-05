@@ -1,5 +1,5 @@
 {
-  "extends": "@torian12321/typescript-config/base.json",
+  "extends": "@torian12321/typescript-config/vite.json",
   "compilerOptions": {
     "allowJs": true
   },
