@@ -4,6 +4,7 @@ import globals from 'globals';
 
 import { customPluginRules } from './rules/customRules/index.js';
 import { reactHookRules } from './rules/hooks.js';
+import { htmlRules } from './rules/html.js';
 import { prettierRules } from './rules/prettier.js';
 import baseConfig from './base.js';
 
@@ -13,6 +14,7 @@ export default [
   { languageOptions: { parserOptions: { ecmaFeatures: { jsx: true } } } },
   ...baseConfig,
   reactHookRules,
+  htmlRules,
   {
     plugins: {
       react,
