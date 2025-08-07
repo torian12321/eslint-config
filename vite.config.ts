@@ -1,12 +1,12 @@
 import { resolve } from 'path';
 
+import dts from 'vite-plugin-dts';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   build: {
     outDir: 'lib',
     lib: {
-      // entry: resolve(__dirname, 'src/index.js'),
       entry: {
         'eslint-config': resolve(__dirname, 'src/index.js'),
         base: resolve(__dirname, 'src/base.js'),
@@ -57,6 +57,17 @@ export default defineConfig({
     target: 'node18',
     minify: true,
   },
+  plugins: [
+    dts({
+      insertTypesEntry: true,
+      exclude: [
+        '**/*.test.ts',
+        '**/*.test.tsx',
+        'vite.config.ts',
+        'examples/**',
+      ],
+    }),
+  ],
   test: {
     include: ['**/*.test.js'],
     exclude: ['**/node_modules/**'],

@@ -1,19 +1,23 @@
 {
   "name": "@torian12321/eslint-config",
-  "version": "0.0.8-beta.7",
+  "version": "0.0.8-beta.8",
   "main": "lib/eslint-config.cjs",
   "module": "lib/eslint-config.js",
+  "types": "lib/eslint-config.d.ts",
   "type": "module",
   "exports": {
     ".": {
+      "types": "./lib/eslint-config.d.ts",
       "import": "./lib/eslint-config.js",
       "require": "./lib/eslint-config.cjs"
     },
     "./base": {
+      "types": "./lib/base.d.ts",
       "import": "./lib/base.js",
       "require": "./lib/base.cjs"
     },
     "./react": {
+      "types": "./lib/react.d.ts",
       "import": "./lib/react.js",
       "require": "./lib/react.cjs"
     }
