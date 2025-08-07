@@ -15,12 +15,6 @@ const project = resolve(process.cwd(), 'tsconfig.json');
 export default [
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
-  { ignores: ['node_modules/*', 'dist/*', 'coverage/*'] },
-  { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}', '!eslint.config.js'] },
-  variableRules,
-  objectRules,
-  importRules,
-  namingConventionRules,
   {
     ignores: [
       // Ignore dotfiles
@@ -28,7 +22,17 @@ export default [
       'eslint.config.js',
       'node_modules/*',
       'dist/*',
+      'build/*',
+      'lib/*',
+      'coverage/*',
     ],
+  },
+  { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}', '!eslint.config.js'] },
+  variableRules,
+  objectRules,
+  importRules,
+  namingConventionRules,
+  {
     settings: {
       'import/resolver': {
         typescript: {
@@ -54,7 +58,7 @@ export default [
       'no-nested-ternary': 'error',
       'no-unneeded-ternary': 'error',
       'no-else-return': 'error',
-      'max-params': ['error', { max: 3 }],
+      'max-params': ['warn', { max: 3 }],
       'torian12321-eslint/max-params': ['error', { max: 5 }],
       'torian12321-eslint/naming-convention-gql': 'error',
       '@typescript-eslint/member-ordering': ['error'],
