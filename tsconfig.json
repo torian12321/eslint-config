@@ -1,7 +1,12 @@
 {
   "extends": "@torian12321/typescript-config/vite.json",
   "compilerOptions": {
-    "allowJs": true
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["src/*"]
+    }
   },
-  "include": [".", "**/*.js"]
+  "include": [".", "**/*.js", "**/*.ts"],
+  "exclude": ["lib", "examples"]
 }
