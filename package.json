@@ -1,6 +1,6 @@
 {
   "name": "@torian12321/eslint-config",
-  "version": "0.0.7",
+  "version": "0.0.8-beta.4",
   "main": "src/index.js",
   "type": "module",
   "exports": {
