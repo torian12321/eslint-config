@@ -1,14 +1,12 @@
-import baseConfig from './src/base.js';
+import { baseConfig } from './src/index.js';
 
 export default [
-  { ignores: ['eslint.config.js', 'examples/**'] },
   ...baseConfig,
+  { ignores: ['eslint.config.js', 'examples/**'] },
   {
-    files: ['**/*.{js,ts,jsx,tsx}'],
     languageOptions: {
       parserOptions: {
-        project: ['./tsconfig.json'],
-        tsconfigRootDir: '.',
+        project: './tsconfig.json',
       },
     },
   },

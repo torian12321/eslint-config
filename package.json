@@ -1,21 +1,36 @@
 {
   "name": "@torian12321/eslint-config",
-  "version": "0.0.8-beta.4",
-  "main": "src/index.js",
+  "version": "0.0.8-beta.7",
+  "main": "lib/eslint-config.cjs",
+  "module": "lib/eslint-config.js",
   "type": "module",
   "exports": {
-    ".": "./src/index.js",
-    "./base": "./src/base.js",
-    "./react": "./src/react.js"
+    ".": {
+      "import": "./lib/eslint-config.js",
+      "require": "./lib/eslint-config.cjs"
+    },
+    "./base": {
+      "import": "./lib/base.js",
+      "require": "./lib/base.cjs"
+    },
+    "./react": {
+      "import": "./lib/react.js",
+      "require": "./lib/react.cjs"
+    }
   },
+  "files": [
+    "lib/**/*"
+  ],
   "author": "torian12321",
   "prettier": "@torian12321/prettier-config",
   "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
     "test": "vitest run",
     "test:watch": "vitest watch",
     "format": "eslint --fix",
     "format:check": "eslint",
-    "prepublishOnly": "npm run test"
+    "prepublishOnly": "npm run format:check && npm run test && npm run build"
   },
   "publishConfig": {
     "access": "public",
@@ -31,23 +46,27 @@
     "@typescript-eslint/eslint-plugin": "^8.35.1",
     "@typescript-eslint/parser": "^8.35.1",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.3",
+    "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-no-inline-styles": "^1.0.5",
+    "eslint-plugin-prettier": "^5.5.3",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "eslint-plugin-simple-import-sort": "^12.1.1",
-    "eslint-import-resolver-typescript": "^4.4.4",
-    "typescript-eslint": "^8.35.1",
-    "globals": "^13.24.0"
+    "globals": "^13.24.0",
+    "typescript-eslint": "^8.35.1"
   },
   "devDependencies": {
     "@torian12321/prettier-config": "^0.0.2",
     "@torian12321/typescript-config": "^0.0.1",
+    "@types/node": "^24.2.0",
     "eslint": "^9.30.1",
     "prettier": "^3.6.2",
+    "typescript": "^5.8.3",
+    "vite": "^7.0.0",
+    "vite-plugin-dts": "^4.5.4",
     "vitest": "^3.2.4"
   }
 }
