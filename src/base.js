@@ -3,6 +3,7 @@ import { resolve } from 'node:path';
 import tseslint from 'typescript-eslint';
 
 import { customPluginRules } from './rules/customRules/index.js';
+import { enumRules } from './rules/enums.js';
 import { importRules } from './rules/import.js';
 import { namingConventionRules } from './rules/namingConvention.js';
 import { objectRules } from './rules/objects.js';
@@ -29,6 +30,7 @@ export default [
   },
   { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}', '!eslint.config.js'] },
   variableRules,
+  enumRules,
   objectRules,
   importRules,
   namingConventionRules,

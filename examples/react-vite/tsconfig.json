@@ -1,4 +1,4 @@
 {
-  "extends": "@torian12321/typescript-config/vite-react.json",
+  "extends": "@torian12321/typescript-config/vite-react",
   "include": [".", "src"]
 }
