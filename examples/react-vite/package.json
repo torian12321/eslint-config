@@ -8,13 +8,14 @@
     "format": "eslint --fix"
   },
   "devDependencies": {
-    "@torian12321/eslint-config": "file:../../src",
-    "@torian12321/prettier-config": "0.0.2",
+    "@torian12321/eslint-config": "file:../..",
+    "@torian12321/prettier-config": "0.0.3",
     "@torian12321/typescript-config": "0.0.4",
-    "prettier": "^3.6.2",
-    "eslint": "^9.33.0"
+    "eslint": "^9.33.0",
+    "prettier": "^3.6.2"
   },
   "dependencies": {
+    "@types/react": "^19.1.10",
     "react": "^19.1.1"
   }
 }

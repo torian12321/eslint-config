@@ -34,7 +34,8 @@ export const maxParamsRule = {
       },
     ],
   },
-  create(context) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  create(context: any) {
     const options = context.options[0];
     let maxParams = DEFAULT_MAX_PARAMS;
 
@@ -44,7 +45,8 @@ export const maxParamsRule = {
       maxParams = options;
     }
 
-    const checkFunction = node => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const checkFunction = (node: any) => {
       const totalParams = node.params.length;
 
       if (totalParams > maxParams) {

@@ -1,15 +1,15 @@
-import { gqlIsFragment, gqlIsMutation } from '../utils.js';
+import { gqlIsFragment, gqlIsMutation } from '../utils';
 import {
   DEFAULT_FRAGMENT_SUFFIXES,
   DEFAULT_MUTATION_PREFIXES,
   DEFAULT_QUERY_PREFIXES,
-} from './constants.js';
+} from './constants';
 import {
   formatTocamelCase,
   hasValidPrefix,
   hasValidSuffix,
   isCamelCase,
-} from './utils.js';
+} from './utils';
 
 /**
  * ESLint rule to enforce naming conventions for GraphQL when using `graphql-tag`.
@@ -70,8 +70,9 @@ export const namingConventionGqlRule = {
       },
     ],
   },
-  create(context) {
-    const options = context.options[0];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  create(context: any) {
+    const options = context.options[0] ?? {};
     let validQueryPrefixes = DEFAULT_QUERY_PREFIXES;
     let validMutationPrefixes = DEFAULT_MUTATION_PREFIXES;
     let validFragmentSuffixes = DEFAULT_FRAGMENT_SUFFIXES;
@@ -90,7 +91,8 @@ export const namingConventionGqlRule = {
 
     return {
       // Performs action in the function on every variable declarator
-      VariableDeclarator(node) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      VariableDeclarator(node: any) {
         if (node?.init?.tag?.name === 'gql') {
           const varName = node?.id?.name ?? '';
           const varKind = node.parent.kind;
@@ -116,7 +118,8 @@ export const namingConventionGqlRule = {
                 data: {
                   varName,
                 },
-                fix(fixer) {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                fix(fixer: any) {
                   // Convert to camelCase
                   const camelCased = formatTocamelCase(varName);
                   return fixer.replaceText(node?.id, camelCased);
@@ -145,7 +148,8 @@ export const namingConventionGqlRule = {
                 data: {
                   varName,
                 },
-                fix(fixer) {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                fix(fixer: any) {
                   return fixer.replaceText(
                     node?.id,
                     varName.replace(/([A-Z])/g, '_$1').toUpperCase(),

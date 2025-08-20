@@ -15,8 +15,8 @@ The configuration will consider that [ESLint v9.0.0](https://eslint.org/blog/202
 
 There are 2 available ESLint configuration files:
 
-- `base.js`: For a basic typescript project.
-- `react.js`: For a React project (extends base config).
+- `base.ts`: For a basic typescript project.
+- `react.ts`: For a React project (extends base config).
 
 <p align="center">
   <img src="./docs/assets/eslint-config.svg" alt='eslint-config diagram' />
