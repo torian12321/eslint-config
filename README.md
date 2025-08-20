@@ -427,6 +427,96 @@ const x: Array<string> = ['a', 'b'];
 const x: string[] = ['a', 'b'];
 ```
 
+### Enums
+
+> ['@typescript-eslint/no-duplicate-enum-values'](https://typescript-eslint.io/rules/no-duplicate-enum-values/): 'error',
+
+```ts
+/** ❌ bad */
+enum Direction {
+  A = 'A',
+  B = 'A',
+  C = `A`,
+};
+
+/** ✅ good */
+enum E {
+  A = 'A',
+  B = 'B',
+  C = `C`,
+};
+```
+
+> ['@typescript-eslint/no-mixed-enums'](https://typescript-eslint.io/rules/no-mixed-enums): 'error',
+
+```ts
+/** ❌ bad */
+enum Status {
+  Unknown,
+  Closed = 1,
+  Open = 'open',
+};
+
+/** ✅ good */
+enum Status {
+  Unknown = 'unknown',
+  Closed = 'closed',
+  Open = 'open',
+};
+```
+
+> ['@typescript-eslint/prefer-enum-initializers'](https://typescript-eslint.io/rules/prefer-enum-initializers): 'error',
+
+```ts
+/** ❌ bad */
+enum Color {
+  Red,
+  Green = 'Green',
+  Blue = 'Blue',
+};
+
+/** ✅ good */
+enum Color {
+  Red = 'Red',
+  Green = 'Green',
+  Blue = 'Blue',
+};
+```
+
+> ['@typescript-eslint/no-magic-numbers'](https://typescript-eslint.io/rules/no-magic-numbers): 'warn',
+
+```ts
+/** ⚠️ warning */
+enum Options {
+  One = 1,
+  Two = 2,
+};
+
+/** ✅ good */
+enum Options {
+  One = 'one',
+  Two = 'two',
+};
+```
+
+> ['no-restricted-syntax'](https://eslint.org/docs/latest/rules/no-restricted-syntax): 'warn',
+
+```ts
+/** ⚠️ warning */
+enum Status {
+  Unknown = 'unknown',
+  Closed = 'closed',
+  Open = 'open',
+};
+
+/** ✅ good */
+const Status {
+  Unknown: 'unknown',
+  Closed: 'closed',
+  Open: 'open',
+} as const;
+```
+
 # TODO:
 
 - Update files to use TS extension
