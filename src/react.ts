@@ -2,11 +2,11 @@ import react from 'eslint-plugin-react';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import globals from 'globals';
 
-import { customPluginRules } from './rules/customRules/index.js';
-import { reactHookRules } from './rules/hooks.js';
-import { htmlRules } from './rules/html.js';
-import { prettierRules } from './rules/prettier.js';
-import baseConfig from './base.js';
+import { customPluginRules } from './rules/customRules';
+import { reactHookRules } from './rules/hooks';
+import { htmlRules } from './rules/html';
+import { prettierRules } from './rules/prettier';
+import baseConfig from './base';
 
 export default [
   { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },

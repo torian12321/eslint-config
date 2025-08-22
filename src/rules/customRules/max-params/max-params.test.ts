@@ -1,8 +1,7 @@
-/* eslint-disable no-dupe-keys */
 import { RuleTester } from 'eslint';
 import { describe, it } from 'vitest';
 
-import { maxParamsRule } from './max-params.js';
+import { maxParamsRule } from './max-params';
 
 describe('customRules/max-params', () => {
   const ruleTester = new RuleTester({
@@ -19,7 +18,6 @@ describe('customRules/max-params', () => {
       invalid: [
         {
           code: 'const myFunction = (a, b, c, d, e, f) => { console.log(a, b, c, d, e, f) }',
-          errors: 1,
           errors: [
             {
               message:
@@ -44,7 +42,6 @@ describe('customRules/max-params', () => {
           {
             code: 'const myFunction = (a, b, c) => { console.log(a, b, c) }',
             options: [{ max: 2 }],
-            errors: 1,
             errors: [
               {
                 message:
@@ -68,7 +65,6 @@ describe('customRules/max-params', () => {
           {
             code: 'const myFunction = (a, b, c) => { console.log(a, b, c) }',
             options: [1],
-            errors: 1,
             errors: [
               {
                 message:
