@@ -33,7 +33,7 @@
     "test:watch": "vitest watch",
     "format": "eslint --fix",
     "format:check": "eslint",
-    "prepublishOnly": "npm run format:check && npm run test && npm run build"
+    "prepublishOnly": "npm run test && npm run build && npm run format:check"
   },
   "publishConfig": {
     "access": "public",
