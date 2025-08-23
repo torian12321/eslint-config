@@ -11,11 +11,11 @@
     "@torian12321/eslint-config": "file:../..",
     "@torian12321/prettier-config": "0.0.3",
     "@torian12321/typescript-config": "0.0.4",
-    "eslint": "^9.33.0",
+    "eslint": "^9.34.0",
     "prettier": "^3.6.2"
   },
   "dependencies": {
-    "@types/react": "^19.1.10",
+    "@types/react": "^19.1.11",
     "react": "^19.1.1"
   }
 }

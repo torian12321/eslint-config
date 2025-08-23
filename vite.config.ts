@@ -7,7 +7,6 @@ export default defineConfig({
   build: {
     outDir: 'lib',
     lib: {
-      // entry: resolve(__dirname, 'src/index.js'),
       entry: {
         'eslint-config': resolve(__dirname, 'src/index.ts'),
         base: resolve(__dirname, 'src/base.ts'),

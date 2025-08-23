@@ -1,14 +1,8 @@
 export const enumRules = {
   rules: {
-    '@typescript-eslint/no-duplicate-enum-values': 'error',
-    '@typescript-eslint/no-mixed-enums': 'error',
-    '@typescript-eslint/prefer-enum-initializers': 'error',
-    '@typescript-eslint/no-magic-numbers': [
-      'warn',
-      {
-        ignoreEnums: false,
-      },
-    ],
+    /**
+     * Desincourage the use of enums
+     */
     'no-restricted-syntax': [
       'warn',
       {
@@ -16,5 +10,13 @@ export const enumRules = {
         message: 'Avoid the use of enums',
       },
     ],
+
+    /**
+     * Enums rules in case of use:
+     */
+    '@typescript-eslint/no-duplicate-enum-values': 'error',
+    '@typescript-eslint/no-mixed-enums': 'error',
+    '@typescript-eslint/prefer-enum-initializers': 'error',
+    '@typescript-eslint/prefer-literal-enum-member': 'error',
   },
 };
