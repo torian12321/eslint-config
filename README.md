@@ -196,8 +196,6 @@ switch (foo) {
 /** ⚠️ warning */
 console.log('Log a debug level message.');
 
-const func_2 = (a, b = 0, c) => {};
-
 /** ✅ good */
 console.warn('Log a debug level message.');
 console.error('Log a debug level message.');
@@ -232,19 +230,36 @@ const func_4 = (a: string, b: number, c?: boolean) => {};
 
 ```js
 /** ❌ bad */
-const myFunction = (v_one, v_two, v_three, v_four, v_five, v_six) => {
+const myFunction = (
+  v_one,
+  v_two,
+  v_three,
+  v_four,
+  v_five, 
+  v_six,
+) => {
   /* code */
   /* max allowed parameters is 5 */
 };
 
 /** ⚠️ warning */
-const myFunction = (var_one, var_two, var_three, var_four, var_five) => {
+const myFunction = (
+  var_one,
+  var_two,
+  var_three,
+  var_four,
+  var_five,
+) => {
   /* code */
   /* max suggested parameters is 3 */
 };
 
 /** ✅ good */
-const myFunction = (var_one, var_two, var_three) => {
+const myFunction = (
+  var_one,
+  var_two,
+  var_three,
+) => {
   /* code */
 };
 
