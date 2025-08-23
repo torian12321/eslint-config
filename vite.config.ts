@@ -1,16 +1,16 @@
 import { resolve } from 'path';
 
+import dts from 'vite-plugin-dts';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   build: {
     outDir: 'lib',
     lib: {
-      // entry: resolve(__dirname, 'src/index.js'),
       entry: {
-        'eslint-config': resolve(__dirname, 'src/index.js'),
-        base: resolve(__dirname, 'src/base.js'),
-        react: resolve(__dirname, 'src/react.js'),
+        'eslint-config': resolve(__dirname, 'src/index.ts'),
+        base: resolve(__dirname, 'src/base.ts'),
+        react: resolve(__dirname, 'src/react.ts'),
       },
       name: '@torian12321/eslint-config',
       formats: ['es', 'cjs'],
@@ -57,8 +57,14 @@ export default defineConfig({
     target: 'node18',
     minify: true,
   },
+  plugins: [
+    dts({
+      insertTypesEntry: true,
+      exclude: ['**/*.test.ts', '**/*.test.tsx', 'vite.config.ts'],
+    }),
+  ],
   test: {
-    include: ['**/*.test.js'],
+    include: ['**/*.test.js', '**/*.test.ts'],
     exclude: ['**/node_modules/**'],
     reporters: 'verbose',
   },

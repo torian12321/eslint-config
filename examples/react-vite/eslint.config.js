@@ -1,10 +1,9 @@
 import { reactConfig } from '@torian12321/eslint-config';
 
 export default [
-  { ignores: ['eslint.config.js'] },
   ...reactConfig,
+  { ignores: ['eslint.config.js'] },
   {
-    files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
       parserOptions: {
         project: 'tsconfig.json',

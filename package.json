@@ -1,20 +1,23 @@
 {
   "name": "@torian12321/eslint-config",
-  "version": "0.0.8-beta.7",
+  "version": "0.0.9",
   "main": "lib/eslint-config.cjs",
   "module": "lib/eslint-config.js",
   "type": "module",
   "exports": {
     ".": {
       "import": "./lib/eslint-config.js",
+      "types": "./lib/eslint-config.d.ts",
       "require": "./lib/eslint-config.cjs"
     },
     "./base": {
       "import": "./lib/base.js",
+      "types": "./lib/base.d.ts",
       "require": "./lib/base.cjs"
     },
     "./react": {
       "import": "./lib/react.js",
+      "types": "./lib/react.d.ts",
       "require": "./lib/react.cjs"
     }
   },
@@ -30,7 +33,7 @@
     "test:watch": "vitest watch",
     "format": "eslint --fix",
     "format:check": "eslint",
-    "prepublishOnly": "npm run format:check && npm run test && npm run build"
+    "prepublishOnly": "npm run test && npm run build && npm run format:check"
   },
   "publishConfig": {
     "access": "public",
@@ -42,7 +45,8 @@
   },
   "dependencies": {
     "@eslint/compat": "^1.3.2",
-    "@eslint/js": "^9.33.0",
+    "@eslint/js": "^9.34.0",
+    "@types/eslint-plugin-jsx-a11y": "^6.10.0",
     "@typescript-eslint/eslint-plugin": "^8.40.0",
     "@typescript-eslint/parser": "^8.40.0",
     "eslint-config-prettier": "^10.1.8",
@@ -59,10 +63,12 @@
     "typescript-eslint": "^8.40.0"
   },
   "devDependencies": {
-    "@torian12321/prettier-config": "^0.0.2",
+    "@torian12321/eslint-config": "file:.",
+    "@torian12321/prettier-config": "^0.0.3",
     "@torian12321/typescript-config": "^0.0.4",
+    "@types/eslint": "^9.6.1",
     "@types/node": "^24.3.0",
-    "eslint": "^9.33.0",
+    "eslint": "^9.34.0",
     "prettier": "^3.6.2",
     "typescript": "^5.9.2",
     "vite": "^7.1.3",

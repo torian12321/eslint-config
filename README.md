@@ -15,8 +15,8 @@ The configuration will consider that [ESLint v9.0.0](https://eslint.org/blog/202
 
 There are 2 available ESLint configuration files:
 
-- `base.js`: For a basic typescript project.
-- `react.js`: For a React project (extends base config).
+- `base.ts`: For a basic typescript project.
+- `react.ts`: For a React project (extends base config).
 
 <p align="center">
   <img src="./docs/assets/eslint-config.svg" alt='eslint-config diagram' />
@@ -444,6 +444,25 @@ const x: string[] = ['a', 'b'];
 
 ### Enums
 
+> ['no-restricted-syntax'](https://eslint.org/docs/latest/rules/no-restricted-syntax): 'warn',
+
+```ts
+/** ⚠️ warning */
+enum Status {
+  Unknown = 'unknown',
+  Closed = 'closed',
+  Open = 'open',
+};
+
+/** ✅ good */
+const Status {
+  Unknown: 'unknown',
+  Closed: 'closed',
+  Open: 'open',
+} as const;
+```
+
+
 > ['@typescript-eslint/no-duplicate-enum-values'](https://typescript-eslint.io/rules/no-duplicate-enum-values/): 'error',
 
 ```ts
@@ -498,40 +517,25 @@ enum Color {
 };
 ```
 
-> ['@typescript-eslint/no-magic-numbers'](https://typescript-eslint.io/rules/no-magic-numbers): 'warn',
+
+> ['@typescript-eslint/prefer-literal-enum-member'](https://typescript-eslint.io/rules/prefer-literal-enum-member/): 'error',
 
 ```ts
-/** ⚠️ warning */
-enum Options {
-  One = 1,
-  Two = 2,
-};
+/** ❌ bad */
+const string = 'string1';
+
+enum Invalid {
+  A = string, // Variable assignment
+  B = `Interpolates ${string}`, // Template literal with interpolation
+  C = 2 + 2, // Expression assignment
+  D = C, // Assignment to another enum member
+}
 
 /** ✅ good */
-enum Options {
-  One = 'one',
-  Two = 'two',
-};
+enum Valid {
+  A, // No initializer; initialized with ascending integers starting from 0
+  B = 'string1', // A regular string
+  C = `A template literal string`, // A template literal without interpolation
+  D = 4, // A number
+}
 ```
-
-> ['no-restricted-syntax'](https://eslint.org/docs/latest/rules/no-restricted-syntax): 'warn',
-
-```ts
-/** ⚠️ warning */
-enum Status {
-  Unknown = 'unknown',
-  Closed = 'closed',
-  Open = 'open',
-};
-
-/** ✅ good */
-const Status {
-  Unknown: 'unknown',
-  Closed: 'closed',
-  Open: 'open',
-} as const;
-```
-
-# TODO:
-
-- Update files to use TS extension

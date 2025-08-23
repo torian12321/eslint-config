@@ -1,5 +1,5 @@
-import { maxParamsRule } from './max-params/index.js';
-import { namingConventionGqlRule } from './naming-convention-gql/index.js';
+import { maxParamsRule } from './max-params';
+import { namingConventionGqlRule } from './naming-convention-gql';
 
 export const customPluginRules = {
   rules: {

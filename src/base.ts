@@ -2,15 +2,14 @@ import pluginJs from '@eslint/js';
 import { resolve } from 'node:path';
 import tseslint from 'typescript-eslint';
 
-import { customPluginRules } from './rules/customRules/index.js';
-import { enumRules } from './rules/enums.js';
-import { importRules } from './rules/import.js';
-import { namingConventionRules } from './rules/namingConvention.js';
-import { objectRules } from './rules/objects.js';
-import { prettierRules } from './rules/prettier.js';
-import { variableRules } from './rules/variables.js';
+import { customPluginRules } from './rules/customRules';
+import { enumRules } from './rules/enums';
+import { importRules } from './rules/import';
+import { namingConventionRules } from './rules/namingConvention';
+import { objectRules } from './rules/objects';
+import { prettierRules } from './rules/prettier';
+import { variableRules } from './rules/variables';
 
-// eslint-disable-next-line no-undef
 const project = resolve(process.cwd(), 'tsconfig.json');
 
 export default [

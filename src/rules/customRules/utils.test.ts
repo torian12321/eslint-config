@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { gqlIsFragment, gqlIsMutation } from './utils.js';
+import { gqlIsFragment, gqlIsMutation } from './utils';
 
 describe('customRules/utils', () => {
   describe('gqlIsFragment', () => {

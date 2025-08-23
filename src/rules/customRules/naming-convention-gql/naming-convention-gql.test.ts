@@ -1,8 +1,7 @@
-/* eslint-disable no-dupe-keys */
 import { RuleTester } from 'eslint';
 import { describe, it } from 'vitest';
 
-import { namingConventionGqlRule } from './naming-convention-gql.js';
+import { namingConventionGqlRule } from './naming-convention-gql';
 
 describe('customRules/naming-convention-gql', () => {
   const ruleTester = new RuleTester({
@@ -24,7 +23,6 @@ describe('customRules/naming-convention-gql', () => {
         invalid: [
           {
             code: 'let GET_USERS = gql`query getUsers { items { uuid, name } }`',
-            errors: 1,
             errors: [
               {
                 message:
@@ -34,7 +32,6 @@ describe('customRules/naming-convention-gql', () => {
           },
           {
             code: 'const getUsers = gql`query getUsers { items { uuid, name } }`',
-            errors: 2,
             errors: [
               {
                 message:
@@ -50,7 +47,6 @@ describe('customRules/naming-convention-gql', () => {
           },
           {
             code: 'const FETCH_USERS = gql`query getUsers { items { uuid, name  } }`',
-            errors: 1,
             errors: [
               {
                 message:
@@ -74,7 +70,6 @@ describe('customRules/naming-convention-gql', () => {
           {
             code: 'const GET_USERS = gql`fetchUsers { items { uuid, name } }`',
             options: [{ queryPrefixes: ['FETCH'] }],
-            errors: 1,
             errors: [
               {
                 message:
@@ -108,7 +103,6 @@ describe('customRules/naming-convention-gql', () => {
         invalid: [
           {
             code: 'let UPDATE_USER = gql`mutation updateUser { items { uuid, name } }`',
-            errors: 1,
             errors: [
               {
                 message:
@@ -118,7 +112,6 @@ describe('customRules/naming-convention-gql', () => {
           },
           {
             code: 'const updateUser = gql`mutation updateUser { items { uuid, name } }`',
-            errors: 2,
             errors: [
               {
                 message:
@@ -134,7 +127,6 @@ describe('customRules/naming-convention-gql', () => {
           },
           {
             code: 'const MODIFY_USER = gql`mutation updateUser { items { uuid, name  } }`',
-            errors: 1,
             errors: [
               {
                 message:
@@ -158,7 +150,6 @@ describe('customRules/naming-convention-gql', () => {
           {
             code: 'const GET_USERS = gql`mutation createUser { items { uuid, name } }`',
             options: [{ mutationPrefixes: ['CREATE', 'REMOVE'] }],
-            errors: 1,
             errors: [
               {
                 message:
@@ -182,7 +173,6 @@ describe('customRules/naming-convention-gql', () => {
         invalid: [
           {
             code: 'let userFragment = gql` fragment User_user on User { firstName }`',
-            errors: 1,
             errors: [
               {
                 message:
@@ -192,7 +182,6 @@ describe('customRules/naming-convention-gql', () => {
           },
           {
             code: 'const USER_FRAGMENT = gql` fragment User_user on User { firstName }`',
-            errors: 2,
             errors: [
               {
                 message:
@@ -208,7 +197,6 @@ describe('customRules/naming-convention-gql', () => {
           },
           {
             code: 'const userPartial = gql` fragment User_user on User { firstName }`',
-            errors: 1,
             errors: [
               {
                 message:
@@ -232,7 +220,6 @@ describe('customRules/naming-convention-gql', () => {
           {
             code: 'const userFragment = gql` fragment User_user on User { firstName }`',
             options: [{ fragmentSuffixes: ['Fr', 'Frag'] }],
-            errors: 1,
             errors: [
               {
                 message:
