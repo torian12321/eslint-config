@@ -1,9 +1,9 @@
 {
   "name": "@torian12321/eslint-config",
   "version": "0.0.9",
-  "main": "dist/eslint-config.cjs",
-  "module": "dist/eslint-config.js",
   "type": "module",
+  "author": "torian12321",
+  "prettier": "@torian12321/prettier-config",
   "exports": {
     ".": {
       "import": "./dist/eslint-config.js",
@@ -21,11 +21,6 @@
       "require": "./dist/react.cjs"
     }
   },
-  "files": [
-    "dist/**/*"
-  ],
-  "author": "torian12321",
-  "prettier": "@torian12321/prettier-config",
   "scripts": {
     "build": "vite build",
     "dev": "vite build --watch",
