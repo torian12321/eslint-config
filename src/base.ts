@@ -23,7 +23,7 @@ export default [
       'node_modules/*',
       'dist/*',
       'build/*',
-      'lib/*',
+      'dist/*',
       'coverage/*',
     ],
   },

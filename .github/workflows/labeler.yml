@@ -1,6 +1,7 @@
 # https://github.com/actions/labeler
 
 name: "PR Labeler 🏷️"
+description: "Add automatic labels to PRs based on the content of the PR"
 
 on:
   - pull_request_target
