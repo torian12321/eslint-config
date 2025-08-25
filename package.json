@@ -1,28 +1,28 @@
 {
   "name": "@torian12321/eslint-config",
   "version": "0.0.9",
-  "main": "lib/eslint-config.cjs",
-  "module": "lib/eslint-config.js",
+  "main": "dist/eslint-config.cjs",
+  "module": "dist/eslint-config.js",
   "type": "module",
   "exports": {
     ".": {
-      "import": "./lib/eslint-config.js",
-      "types": "./lib/eslint-config.d.ts",
-      "require": "./lib/eslint-config.cjs"
+      "import": "./dist/eslint-config.js",
+      "types": "./dist/eslint-config.d.ts",
+      "require": "./dist/eslint-config.cjs"
     },
     "./base": {
-      "import": "./lib/base.js",
-      "types": "./lib/base.d.ts",
-      "require": "./lib/base.cjs"
+      "import": "./dist/base.js",
+      "types": "./dist/base.d.ts",
+      "require": "./dist/base.cjs"
     },
     "./react": {
-      "import": "./lib/react.js",
-      "types": "./lib/react.d.ts",
-      "require": "./lib/react.cjs"
+      "import": "./dist/react.js",
+      "types": "./dist/react.d.ts",
+      "require": "./dist/react.cjs"
     }
   },
   "files": [
-    "lib/**/*"
+    "dist/**/*"
   ],
   "author": "torian12321",
   "prettier": "@torian12321/prettier-config",

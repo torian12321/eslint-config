@@ -5,7 +5,7 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   build: {
-    outDir: 'lib',
+    outDir: 'dist',
     lib: {
       entry: {
         'eslint-config': resolve(__dirname, 'src/index.ts'),
