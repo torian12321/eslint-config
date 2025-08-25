@@ -1,4 +1,5 @@
 name: Create Release from package.json
+description: 'Create a release from package.json'
 
 on:
   push:

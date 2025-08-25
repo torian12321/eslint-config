@@ -2,7 +2,8 @@ documentation:
 - changed-files:
   - any-glob-to-any-file: [
     '**/*.md',
-    '**/*.mdx'
+    '**/*.mdx',
+    './docs/**/*'
   ]
 
 ESLint rules 🔷:
@@ -12,3 +13,7 @@ ESLint rules 🔷:
 github actions:
 - changed-files:
   - any-glob-to-any-file: ['.github/**/*']
+
+examples:
+- changed-files:
+  - any-glob-to-any-file: ['./examples/**/*']
