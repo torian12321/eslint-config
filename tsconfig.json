@@ -6,6 +6,6 @@
       "src/*": ["src/*"]
     }
   },
-  "include": [".", "**/*.js", "**/*.ts"],
+  "include": [".", "**/*.{js,ts}"],
   "exclude": ["dist", "examples"]
 }
