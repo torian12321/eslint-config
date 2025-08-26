@@ -35,5 +35,5 @@ jobs:
       - name: 🧪 Run tests
         run: npm run test
 
-      - name: 📝 Run format:check
+      - name: 📝 Check formatting
         run: npm run format:check
