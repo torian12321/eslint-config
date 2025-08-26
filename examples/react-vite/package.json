@@ -9,8 +9,8 @@
   },
   "devDependencies": {
     "@torian12321/eslint-config": "file:../..",
-    "@torian12321/prettier-config": "0.0.3",
-    "@torian12321/typescript-config": "0.0.4",
+    "@torian12321/prettier-config": "0.0.4",
+    "@torian12321/typescript-config": "0.0.5",
     "eslint": "^9.34.0",
     "prettier": "^3.6.2"
   },

@@ -7,13 +7,13 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     lib: {
+      name: '@torian12321/eslint-config',
+      formats: ['es', 'cjs'],
       entry: {
         'eslint-config': resolve(__dirname, 'src/index.ts'),
         base: resolve(__dirname, 'src/base.ts'),
         react: resolve(__dirname, 'src/react.ts'),
       },
-      name: '@torian12321/eslint-config',
-      formats: ['es', 'cjs'],
     },
     rollupOptions: {
       external: [

@@ -230,36 +230,19 @@ const func_4 = (a: string, b: number, c?: boolean) => {};
 
 ```js
 /** ❌ bad */
-const myFunction = (
-  v_one,
-  v_two,
-  v_three,
-  v_four,
-  v_five, 
-  v_six,
-) => {
+const myFunction = (v_one, v_two, v_three, v_four, v_five, v_six) => {
   /* code */
   /* max allowed parameters is 5 */
 };
 
 /** ⚠️ warning */
-const myFunction = (
-  var_one,
-  var_two,
-  var_three,
-  var_four,
-  var_five,
-) => {
+const myFunction = (var_one, var_two, var_three, var_four, var_five) => {
   /* code */
   /* max suggested parameters is 3 */
 };
 
 /** ✅ good */
-const myFunction = (
-  var_one,
-  var_two,
-  var_three,
-) => {
+const myFunction = (var_one, var_two, var_three) => {
   /* code */
 };
 
@@ -462,7 +445,6 @@ const Status {
 } as const;
 ```
 
-
 > ['@typescript-eslint/no-duplicate-enum-values'](https://typescript-eslint.io/rules/no-duplicate-enum-values/): 'error',
 
 ```ts
@@ -471,14 +453,14 @@ enum Direction {
   A = 'A',
   B = 'A',
   C = `A`,
-};
+}
 
 /** ✅ good */
 enum E {
   A = 'A',
   B = 'B',
   C = `C`,
-};
+}
 ```
 
 > ['@typescript-eslint/no-mixed-enums'](https://typescript-eslint.io/rules/no-mixed-enums): 'error',
@@ -489,14 +471,14 @@ enum Status {
   Unknown,
   Closed = 1,
   Open = 'open',
-};
+}
 
 /** ✅ good */
 enum Status {
   Unknown = 'unknown',
   Closed = 'closed',
   Open = 'open',
-};
+}
 ```
 
 > ['@typescript-eslint/prefer-enum-initializers'](https://typescript-eslint.io/rules/prefer-enum-initializers): 'error',
@@ -507,16 +489,15 @@ enum Color {
   Red,
   Green = 'Green',
   Blue = 'Blue',
-};
+}
 
 /** ✅ good */
 enum Color {
   Red = 'Red',
   Green = 'Green',
   Blue = 'Blue',
-};
+}
 ```
-
 
 > ['@typescript-eslint/prefer-literal-enum-member'](https://typescript-eslint.io/rules/prefer-literal-enum-member/): 'error',
 
