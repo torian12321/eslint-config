@@ -28,7 +28,7 @@
     "test:watch": "vitest watch",
     "format": "eslint --fix && prettier --write .",
     "format:check": "eslint && prettier --check .",
-    "prepublishOnly": "npm run test && npm run build && npm run format:check"
+    "prepublishOnly": "npm run test && npm run format:check && npm run build"
   },
   "publishConfig": {
     "access": "public",
