@@ -1,9 +1,21 @@
 {
-  "version": "0.0.10",
+  "version": "0.0.11",
   "name": "@torian12321/eslint-config",
   "type": "module",
   "author": "torian12321",
   "prettier": "@torian12321/prettier-config",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "format": "eslint --fix && prettier --write .",
+    "format:check": "eslint && prettier --check .",
+    "prepublishOnly": "npm run test && npm run build && npm run format:check"
+  },
+  "files": [
+    "dist/**/*"
+  ],
   "exports": {
     ".": {
       "import": "./dist/eslint-config.js",
@@ -20,15 +32,6 @@
       "types": "./dist/react.d.ts",
       "require": "./dist/react.cjs"
     }
-  },
-  "scripts": {
-    "build": "vite build",
-    "dev": "vite build --watch",
-    "test": "vitest run",
-    "test:watch": "vitest watch",
-    "format": "eslint --fix && prettier --write .",
-    "format:check": "eslint && prettier --check .",
-    "prepublishOnly": "npm run test && npm run build && npm run format:check"
   },
   "publishConfig": {
     "access": "public",
