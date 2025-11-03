@@ -3,6 +3,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 
 export const reactHookRules = {
   plugins: {
+    // @ts-expect-error - reactHooks plugin types include flat config which is incompatible with fixupPluginRules types
     'react-hooks': fixupPluginRules(reactHooks),
   },
   rules: {
