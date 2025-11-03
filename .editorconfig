@@ -1,6 +1,5 @@
 root = true
 
-# Windows-style newlines with a newline ending every frontend file
 [*]
 end_of_line = lf
 insert_final_newline = true
